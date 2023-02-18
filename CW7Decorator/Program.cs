@@ -10,6 +10,14 @@ namespace CW7Decorator
     {
         static void Main(string[] args)
         {
+            TextField textfield = new TextField(10, 8);
+            BorderDecorator borderdecor = new BorderDecorator(textfield);
+            ScrollDecorator scrolldecor = new ScrollDecorator(borderdecor);
+            CookieDecorator cookiedecor = new CookieDecorator(scrolldecor);
+
+            cookiedecor.draw();
+
+            Console.ReadKey();
         }
     }
 }
